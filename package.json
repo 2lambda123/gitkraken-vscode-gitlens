@@ -9348,7 +9348,7 @@
 				},
 				{
 					"command": "gitlens.switchAIModel",
-					"when": "gitlens:enabled"
+					"when": "gitlens:enabled && !gitlens:gk:organization:ai:disabled"
 				},
 				{
 					"command": "gitlens.switchMode",
@@ -11200,11 +11200,11 @@
 				},
 				{
 					"command": "gitlens.generateCommitMessage",
-					"when": "gitlens:enabled && !gitlens:readonly && !gitlens:untrusted && !gitlens:hasVirtualFolders && config.gitlens.ai.experimental.generateCommitMessage.enabled"
+					"when": "gitlens:enabled && !gitlens:readonly && !gitlens:untrusted && !gitlens:hasVirtualFolders && !gitlens:gk:organization:drafts:disabled && config.gitlens.ai.experimental.generateCommitMessage.enabled"
 				},
 				{
 					"command": "gitlens.resetAIKey",
-					"when": "gitlens:enabled"
+					"when": "gitlens:enabled && !gitlens:gk:organization:drafts:disabled"
 				}
 			],
 			"editor/context": [
@@ -11564,7 +11564,7 @@
 				},
 				{
 					"command": "gitlens.generateCommitMessage",
-					"when": "gitlens:enabled && !gitlens:readonly && !gitlens:untrusted && !gitlens:hasVirtualFolders && config.gitlens.ai.experimental.generateCommitMessage.enabled && config.gitlens.menus.scmRepository.generateCommitMessage",
+					"when": "gitlens:enabled && !gitlens:readonly && !gitlens:untrusted && !gitlens:hasVirtualFolders && !gitlens:gk:organization:drafts:disabled && config.gitlens.ai.experimental.generateCommitMessage.enabled && config.gitlens.menus.scmRepository.generateCommitMessage",
 					"group": "4_gitlens@2"
 				}
 			],
@@ -11600,7 +11600,7 @@
 				},
 				{
 					"command": "gitlens.generateCommitMessage",
-					"when": "gitlens:enabled && !gitlens:readonly && !gitlens:untrusted && !gitlens:hasVirtualFolders && config.gitlens.ai.experimental.generateCommitMessage.enabled && scmProvider == git && config.gitlens.menus.scmRepository.generateCommitMessage",
+					"when": "gitlens:enabled && !gitlens:readonly && !gitlens:untrusted && !gitlens:hasVirtualFolders && !gitlens:gk:organization:drafts:disabled && config.gitlens.ai.experimental.generateCommitMessage.enabled && scmProvider == git && config.gitlens.menus.scmRepository.generateCommitMessage",
 					"group": "2_z_gitlens@2"
 				},
 				{
